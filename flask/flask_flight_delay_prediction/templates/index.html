@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Delay Prediction</title>
+</head>
+<body>
+    <h2>Flight Delay Prediction</h2>
+    <form action="/predict" method="post">
+        <label for="DAY_OF_MONTH">Day of Month:</label>
+        <input type="number" name="DAY_OF_MONTH" required><br>
+        <label for="DAY_OF_WEEK">Day of Week:</label>
+        <input type="number" name="DAY_OF_WEEK" required><br>
+        <label for="OP_UNIQUE_CARRIER">Unique Carrier:</label>
+        <input type="text" name="OP_UNIQUE_CARRIER" required><br>
+        <label for="ORIGIN">Origin:</label>
+        <input type="text" name="ORIGIN" required><br>
+        <label for="DEST">Destination:</label>
+        <input type="text" name="DEST" required><br>
+        <label for="DEP_TIME">Departure Time:</label>
+        <input type="number" name="DEP_TIME" required><br>
+        <label for="ARR_TIME">Arrival Time:</label>
+        <input type="number" name="ARR_TIME" required><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
